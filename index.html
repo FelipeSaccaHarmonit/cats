@@ -11,8 +11,8 @@
       box-sizing: border-box;
     }
     body {
-      font-family: Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, rgb(63, 63, 63) 0%, rgb(134, 134, 134) 100%);
+      font-family: 'Helvetica', Arial, sans-serif;
+      background: linear-gradient(135deg, rgb(155, 155, 155) 0%, rgb(94, 94, 94) 100%);
       color: white;
       display: flex;
       flex-direction: column;
@@ -59,19 +59,23 @@
   </style>
 </head>
 <body onload="showImage()">
-  <h1>Kitten Happiness</h1>
+  <h1>Puppy Love</h1>
   <div class="image-container">
-    <img id="introImg" alt="Gatinho fofo">
+    <img id="introImg" alt="Puppy fofo">
   </div>
   <button class="btn-refresh" onclick="showImage()">Nova Imagem</button>
 
   <script>
     const bucket = "https://ws-assets-prod-iad-r-syd-b04c62a5f16f7b2e.s3.ap-southeast-2.amazonaws.com/8c9036a7-7564-434c-b558-3588754e21f5/cats/";
-    const ext = ".jpeg";
+    const format = ".jpeg";
     const imgArray = [];
-    for (let i = 0; i < 10; i++) {
-      imgArray.push(bucket + (i + 1) + ext);
+    for (let i = 0; i < 10; i++){
+      imgArray.push(bucket + (i + 1) + format);
     }
-    function showImage() {
+    function showImage(){
       const imgNum = Math.floor(Math.random() * imgArray.length);
-      document.getElementById("introImg").src = imgArray[imgNum
+      document.getElementById("introImg").src = imgArray[imgNum];
+    }
+  </script>
+</body>
+</html>
